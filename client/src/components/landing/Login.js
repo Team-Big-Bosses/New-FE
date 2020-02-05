@@ -7,10 +7,18 @@ const Login = props => {
     password1: ""
   });
 
+  const headers = {
+    "Content-Type": "application/json"
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
     axios
-      .post("https://team-big-bosses-be.herokuapp.com/api/login/", credentials)
+      .post(
+        "https://team-big-bosses-be.herokuapp.com/api/login/",
+        credentials,
+        headers
+      )
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.key);
