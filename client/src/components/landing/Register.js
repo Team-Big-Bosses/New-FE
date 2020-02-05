@@ -12,7 +12,7 @@ const Register = props => {
     e.preventDefault();
     axios
       .post(
-        "https://team-big-bosses-be.herokuapp.com/api/registration",
+        "https://team-big-bosses-be.herokuapp.com/api/registration/",
         credentials
       )
       .then(res => {
