@@ -10,6 +10,7 @@ const LandingPage = () =>{
         <h1>FlaskRPG</h1>
         <div className="landing-nav">
           <Link className="link" to="/login">Login</Link>
+          <Link className="link" to="/register">Register</Link>
         </div>
       </div>
       <div className="landing-map">
@@ -130,10 +131,29 @@ const LandingPage = () =>{
           <div className="grass-b"></div>
         </div>
         <div className="grass-strip">
-          <div className="grass-tr"></div>
+          <div className="grass-t2"></div>
           <div className="grass-r"></div>
           <div className="grass-br"></div>
         </div>
+        <div className="grass-strip">
+          <div className="bridge-5"></div>
+          <div className="empty"></div>
+          <div className="empty"></div>
+        </div>
+        <div className="grass-strip">
+          <div className="bridge-5"></div>
+          <div className="empty"></div>
+          <div className="empty"></div>
+        </div>
+        <div className="grass-strip">
+          <div className="grass-br"></div>
+          <div className="empty"></div>
+          <div className="empty"></div>
+        </div>
+
+
+
+
       </div>
 
       
