@@ -8,12 +8,17 @@ const Register = props => {
     password2: ""
   });
 
+  const headers = {
+    "Content-Type": "application/json"
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
     axios
       .post(
         "https://team-big-bosses-be.herokuapp.com/api/registration/",
-        credentials
+        credentials,
+        headers
       )
       .then(res => {
         console.log(res);
