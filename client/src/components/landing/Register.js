@@ -18,7 +18,7 @@ const Register = props =>{
         props.history.push("/");
       })
       .catch(err =>{
-        console.log(err.response);
+        console.log(err);
         setCredentials({
           username: "",
           password1: "",
@@ -30,6 +30,7 @@ const Register = props =>{
   const handleChange = e =>{
     setCredentials({...credentials, [e.target.name]: e.target.value});
   };
+  console.log(credentials);
 
   return(
     <div className="register-container">
@@ -38,16 +39,19 @@ const Register = props =>{
         <input
           type="text"
           placeholder="Username"
+          name="username"
           onChange={handleChange}
         />
         <input
           type="password"
           placeholder="Password"
+          name="password1"
           onChange={handleChange}
         />
         <input
           type="password"
           placeholder="Confirm Password"
+          name="password2"
           onChange={handleChange}
         />
         <button type="submit">Register</button>

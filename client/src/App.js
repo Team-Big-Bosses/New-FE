@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
-// import './scss/App.scss'
+import './scss/App.scss'
 
 // import AdminMapBuilder from './admin/map-builder'
 // import World from './components/world'
@@ -11,7 +11,7 @@ import FormikRegister from './components/landing/Register'
 
 function App() {
   return (
-    <div>
+    <div className="app-container">
       <Route exact path="/" component={LandingPage} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={FormikRegister} />

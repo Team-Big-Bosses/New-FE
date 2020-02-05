@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-// import '../../scss/landing.scss'
+import '../../scss/LandingPage.scss'
 
 
 const LandingPage = () =>{
   return(
     <div className="landing-container">
-      <h1>Welcome to Team Big Bosses!</h1>
+      <h1>FlaskRPG</h1>
       <div className="landing-nav">
-        <Link to="/login">Login</Link>
+        <Link className="link" to="/login">Login</Link>
       </div>
     </div>
   )
