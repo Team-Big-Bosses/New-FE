@@ -1,23 +1,26 @@
-import React, {useState} from 'react'
-import axios from 'axios'
+import React, { useState } from "react";
+import axios from "axios";
 
-const Register = props =>{
+const Register = props => {
   const [credentials, setCredentials] = useState({
     username: "",
     password1: "",
     password2: ""
   });
 
-  const handleSubmit = e =>{
+  const handleSubmit = e => {
     e.preventDefault();
     axios
-      .post("https://team-big-bosses-be.herokuapp.com/api/register", credentials)
-      .then(res =>{
+      .post(
+        "https://team-big-bosses-be.herokuapp.com/api/registration/",
+        credentials
+      )
+      .then(res => {
         console.log(res);
-        localStorage.setItem("token", res.data.key)
+        localStorage.setItem("token", res.data.key);
         props.history.push("/");
       })
-      .catch(err =>{
+      .catch(err => {
         console.log(err);
         setCredentials({
           username: "",
@@ -27,12 +30,12 @@ const Register = props =>{
       });
   };
 
-  const handleChange = e =>{
-    setCredentials({...credentials, [e.target.name]: e.target.value});
+  const handleChange = e => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   console.log(credentials);
 
-  return(
+  return (
     <div className="register-container">
       <h1>Sign Up!</h1>
       <form onSubmit={handleSubmit}>
@@ -57,8 +60,7 @@ const Register = props =>{
         <button type="submit">Register</button>
       </form>
     </div>
-  )
-}
-
+  );
+};
 
 export default Register;
