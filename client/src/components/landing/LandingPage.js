@@ -8,7 +8,7 @@ const LandingPage = () =>{
     <div className="landing-container">
       <h1>Welcome to Team Big Bosses!</h1>
       <div className="landing-nav">
-        {/* <Link to="/login">Login</Link> */}
+        <Link to="/login">Login</Link>
       </div>
     </div>
   )
