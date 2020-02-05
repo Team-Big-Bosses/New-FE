@@ -1,0 +1,53 @@
+.register-container{
+  border: 2px solid #489551;
+  width: 40%;
+  margin: 5% auto;
+  padding: 3%;
+
+  h1{
+    text-align: center;
+    color: #489551;
+  }
+
+  form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5% auto;
+
+    input{
+      padding: 3%;
+      margin: 3%;
+      font-size: 1.5rem;
+    }
+
+    button{
+      width: 30%;
+      padding: 3%;
+      margin: auto;
+      border-radius: 3px;
+      background-color: #489551;
+      color: white;
+      border: none;
+      box-shadow: none;
+
+      &:hover{
+        background-color: white;
+        color: #489551;
+      }
+    }
+  }
+
+  p{
+    text-align: center;
+  }
+
+  .link{
+    color: #489551;
+
+    &:hover{
+      color: white;
+    }
+  }
+}
