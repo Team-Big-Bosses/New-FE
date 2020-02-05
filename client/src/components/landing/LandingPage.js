@@ -15,33 +15,48 @@ const LandingPage = () =>{
       <div className="landing-map">
         <div className="grass-strip">
           <div className="grass-t2"></div>
-          <div className="grass-b"></div>
-        </div>
-        <div className="grass-strip">
-          <div className="grass-t2"></div>
-          <div className="grass-b"></div>
-        </div>
-        <div className="grass-strip">
-          <div className="grass-t2"></div>
-          <div className="grass-b"></div>
-        </div>
-        <div className="grass-strip">
-          <div className="grass-t2"></div>
-          <div className="grass-b"></div>
-        </div>
-        <div className="grass-strip">
-          <div className="grass-t2"></div>
-          <div className="grass-b"></div>
-        </div>
-        <div className="grass-strip">
-          <div className="grass-t2"></div>
+          <div className="grass"></div>
+          <div className="grass"></div>
           <div className="grass"></div>
           <div className="grass-b"></div>
         </div>
         <div className="grass-strip">
           <div className="grass-t2"></div>
-          <div className="bridge-5"></div>
+          <div className="grass"></div>
+          <div className="grass"></div>
+          <div className="grass"></div>
           <div className="grass-b"></div>
+        </div>
+        <div className="grass-strip">
+          <div className="grass-t2"></div>
+          <div className="grass"></div>
+          <div className="grass"></div>
+          <div className="grass"></div>
+          <div className="grass-b"></div>
+        </div>
+        <div className="grass-strip">
+          <div className="grass-t2"></div>
+          <div className="grass"></div>
+          <div className="grass"></div>
+          <div className="grass-b"></div>
+        </div>
+        <div className="grass-strip">
+          <div className="grass-t2"></div>
+          <div className="grass-b"></div>
+        </div>
+        <div className="grass-strip">
+          <div className="grass-t2"></div>
+          <div className="grass-b"></div>
+        </div>
+        <div className="grass-strip">
+          <div></div>
+          <div className="bridge-5"></div>
+          <div></div>
+        </div>
+        <div className="grass-strip">
+          <div></div>
+          <div className="bridge-5"></div>
+          <div></div>
         </div>
 
         <div className="grass-c-tl-tr"></div>
