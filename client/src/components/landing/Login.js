@@ -31,11 +31,11 @@ const Login = props => {
 
   return (
     <div className="register-container">
-      <h1>Sign Up!</h1>
+      <h1>Sign In!</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Username" onChange={handleChange} />
-        <input type="password" placeholder="Password" onChange={handleChange} />
-        <button type="submit">Register</button>
+        <input type="text" name="username" placeholder="Username" onChange={handleChange} />
+        <input type="password" name="password1" placeholder="Password" onChange={handleChange} />
+        <button type="submit">Login</button>
       </form>
     </div>
   );
