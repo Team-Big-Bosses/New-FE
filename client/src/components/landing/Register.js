@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {Link} from 'react-router-dom'
+import '../../scss/Register.scss'
 
 const Register = props => {
   const [credentials, setCredentials] = useState({
@@ -42,7 +44,7 @@ const Register = props => {
 
   return (
     <div className="register-container">
-      <h1>Sign Up!</h1>
+      <h1>Sign Up to Play FlaskRPG!</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -64,6 +66,7 @@ const Register = props => {
         />
         <button type="submit">Register</button>
       </form>
+      <p>Already have an account? <Link className="link" to="/login">Login</Link></p>
     </div>
   );
 };
