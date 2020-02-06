@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../scss/Login.scss";
+import Header from '../Header'
 
 const Login = props => {
   const [credentials, setCredentials] = useState({
