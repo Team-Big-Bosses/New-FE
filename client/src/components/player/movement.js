@@ -130,7 +130,7 @@ export default function handleMovement(direction) {
                 case ("WEST"):
                     await axios({
                         method: 'post',
-                        url: BE_URL + 'api/adv/move',
+                        url: BE_URL + 'api/adv/move/',
                         headers: {
                             Authorization: 'Token ' + token
                         },
@@ -157,7 +157,7 @@ export default function handleMovement(direction) {
                 case ("SOUTH"):
                     await axios({
                         method: 'post',
-                        url: BE_URL + 'api/adv/move',
+                        url: BE_URL + 'api/adv/move/',
                         headers: {
                             Authorization: 'Token ' + token
                         },
@@ -184,7 +184,7 @@ export default function handleMovement(direction) {
                 case ("NORTH"):
                     await axios({
                         method: 'post',
-                        url: BE_URL + 'api/adv/move',
+                        url: BE_URL + 'api/adv/move/',
                         headers: {
                             Authorization: 'Token ' + token
                         },
