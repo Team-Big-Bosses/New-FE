@@ -99,11 +99,13 @@ export default function handleMovement(direction) {
 
             store.dispatch({ type: 'DISABLE_MOVEMENT' })
 
+            store.dispatch({ type: 'SET_LOADING', payload: true })
+
             switch(roomTraverseXY.direction) {
                 case ("EAST"):
                     await axios({
                         method: 'post',
-                        url: BE_URL + 'api/adv/move/',
+                        url: proxyurl + BE_URL + 'api/adv/move',
                         headers: {
                             Authorization: 'Token ' + token
                         },
@@ -119,6 +121,13 @@ export default function handleMovement(direction) {
                         }
                     })
 
+                    await store.dispatch({ 
+                        type: 'SET_LOADING', 
+                        payload: false 
+                    })
+
+                    await store.dispatch({ type: 'ENABLE_MOVEMENT' })
+
                     return await store.dispatch({
                         type: 'MOVE_PLAYER',
                         payload: {
@@ -130,7 +139,7 @@ export default function handleMovement(direction) {
                 case ("WEST"):
                     await axios({
                         method: 'post',
-                        url: BE_URL + 'api/adv/move/',
+                        url: proxyurl + BE_URL + 'api/adv/move',
                         headers: {
                             Authorization: 'Token ' + token
                         },
@@ -146,6 +155,13 @@ export default function handleMovement(direction) {
                         }
                     })
 
+                    await store.dispatch({ 
+                        type: 'SET_LOADING', 
+                        payload: false 
+                    })
+                    
+                    await store.dispatch({ type: 'ENABLE_MOVEMENT' })
+
                     return await store.dispatch({
                         type: 'MOVE_PLAYER',
                         payload: {
@@ -157,7 +173,7 @@ export default function handleMovement(direction) {
                 case ("SOUTH"):
                     await axios({
                         method: 'post',
-                        url: BE_URL + 'api/adv/move/',
+                        url: proxyurl + BE_URL + 'api/adv/move',
                         headers: {
                             Authorization: 'Token ' + token
                         },
@@ -173,6 +189,13 @@ export default function handleMovement(direction) {
                         }
                     })
 
+                    await store.dispatch({ 
+                        type: 'SET_LOADING', 
+                        payload: false 
+                    })
+                    
+                    await store.dispatch({ type: 'ENABLE_MOVEMENT' })
+
                     return await store.dispatch({
                         type: 'MOVE_PLAYER',
                         payload: {
@@ -184,7 +207,7 @@ export default function handleMovement(direction) {
                 case ("NORTH"):
                     await axios({
                         method: 'post',
-                        url: BE_URL + 'api/adv/move/',
+                        url: proxyurl + BE_URL + 'api/adv/move',
                         headers: {
                             Authorization: 'Token ' + token
                         },
@@ -199,6 +222,13 @@ export default function handleMovement(direction) {
                             currentRoom: null
                         }
                     })
+
+                    await store.dispatch({ 
+                        type: 'SET_LOADING', 
+                        payload: false 
+                    })
+                    
+                    await store.dispatch({ type: 'ENABLE_MOVEMENT' })
 
                     return await store.dispatch({
                         type: 'MOVE_PLAYER',
