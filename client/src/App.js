@@ -7,11 +7,12 @@ import World from './components/world'
 import LandingPage from './components/landing/LandingPage'
 import Login from './components/landing/Login'
 import FormikRegister from './components/landing/Register'
-// import FormikRegisterTest from './components/landing/test'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="app-container">
+      {/* <Header /> */}
       <Route exact path="/" component={LandingPage} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={FormikRegister} />

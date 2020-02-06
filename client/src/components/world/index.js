@@ -7,6 +7,7 @@ import MapObscure from "../map/obscure";
 import MapOverlay from "../map/overlay";
 import Player from "../player";
 import store from "../../config/store";
+import Header from '../Header'
 
 import "../../config/tiles.css";
 import { BE_URL, token } from "../../config/constants";
@@ -181,11 +182,14 @@ function World(props) {
   const renderRoom = room => {
     return (
       <>
+      <Header />
+      <>
         <DialogueBox />
         <Map tiles={room.tiles} />
         <MapOverlay overlay={room.overlay} />
         <MapObscure obscure={room.obscure} />
         <Player />
+      </>
       </>
     );
   };
