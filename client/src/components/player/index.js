@@ -44,8 +44,8 @@ function Player(props) {
             setSameDir(prevState => !prevState)
         }
 
-        // If 200ms have not passed (approximately animation speed) skip handling movement
-        if (timestamp + 200 < Date.now()) {
+        // If 180ms have not passed (approximately animation speed) skip handling movement
+        if (timestamp + 180 < Date.now()) {
             handleMovement(moveCode)
             setTimestamp(Date.now())
 
