@@ -40,22 +40,22 @@ function Player(props) {
 
         const moveCode = code.replace('Arrow', '').toUpperCase()
 
-        if (props.facing == moveCode) {
+        if (props.facing === moveCode) {
             setSameDir(prevState => !prevState)
         }
 
-        // If 180ms have not passed (approximately animation speed) skip handling movement
-        if (timestamp + 180 < Date.now()) {
+        // If 200ms have not passed (approximately animation speed) skip handling movement
+        if (timestamp + 200 < Date.now()) {
             handleMovement(moveCode)
             setTimestamp(Date.now())
-        }
 
-        return store.dispatch({
-            type: 'SET_FACING',
-            payload: {
-                facing: moveCode
-            }
-        })
+            return store.dispatch({
+                type: 'SET_FACING',
+                payload: {
+                    facing: moveCode
+                }
+            })
+        }
     })
 
     useEffect(() => {

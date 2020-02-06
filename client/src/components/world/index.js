@@ -189,7 +189,7 @@ function World(props) {
                     position: 'relative',
                     width: '320px',
                     height: '240px',
-                    transform: 'scale(2)'
+                    transform: 'scale(2) translateZ(0)'
                 }}
              >
                 {/* Add loading animation to room render if necessary (it probably will be) */}
