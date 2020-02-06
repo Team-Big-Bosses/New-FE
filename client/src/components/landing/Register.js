@@ -25,7 +25,7 @@ const Register = props => {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.key);
-        props.history.push("/");
+        props.history.push("/world");
       })
       .catch(err => {
         console.log(err);
