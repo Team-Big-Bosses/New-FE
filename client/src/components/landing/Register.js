@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom'
 import '../../scss/Register.scss'
-import Header from '../Header'
 
 const Register = props => {
   const [credentials, setCredentials] = useState({
