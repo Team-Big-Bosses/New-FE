@@ -41,8 +41,6 @@ const Login = props => {
   };
 
   return (
-    <>
-    <Header />
     <div className="register-container">
       <h1>Sign In to FlaskRPG!</h1>
       <form onSubmit={handleSubmit}>
@@ -67,7 +65,6 @@ const Login = props => {
         </Link>
       </p>
     </div>
-    </>
   );
 };
 

@@ -44,8 +44,6 @@ const Register = props => {
   
 
   return (
-    <>
-    <Header />
     <div className="register-container">
       <h1>Sign Up to Play FlaskRPG!</h1>
       <form onSubmit={handleSubmit}>
@@ -71,7 +69,6 @@ const Register = props => {
       </form>
       <p>Already have an account? <Link className="link" to="/login">Login</Link></p>
     </div>
-    </>
   );
 };
 

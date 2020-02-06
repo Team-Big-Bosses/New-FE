@@ -12,7 +12,7 @@ import Header from './components/Header'
 function App() {
   return (
     <div className="app-container">
-      {/* <Header /> */}
+      <Header />
       <Route exact path="/" component={LandingPage} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={FormikRegister} />

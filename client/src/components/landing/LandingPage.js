@@ -8,7 +8,6 @@ const LandingPage = () =>{
   return(
     <div className="landing-container">
       <div className="header">
-        <Header />
         {/* <h1>FlaskRPG</h1> */}
         <div className="landing-nav">
           <Link className="link" to="/login">Login</Link>
