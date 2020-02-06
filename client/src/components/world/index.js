@@ -17,7 +17,7 @@ function World(props) {
     const [currentRoom, setCurrentRoom] = useState([])
 
     const fetchCurrentRoom = async () => {
-        await axios.get(BE_URL + 'api/adv/init', {
+        await axios.get(BE_URL + 'api/adv/init/', {
             headers: {
                 Authorization: 'Token ' + token
             }
