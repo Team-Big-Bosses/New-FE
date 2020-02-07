@@ -207,7 +207,20 @@ function World(props) {
   }, [props.currentRoom]);
 
   return (
-        <>
+
+    <div name="game-room">
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div
+          style={{
+            display: "flex",
+            height: "90vh",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "rgb(41, 38, 52)"
+          }}
+        >
+
           <div
             style={{
               display: "flex",
@@ -240,7 +253,9 @@ function World(props) {
             </div>
           </div>
           <Chat />
-        </>
+        </div>
+      </div>
+    </div>
   );
 }
 
