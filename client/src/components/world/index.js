@@ -10,7 +10,7 @@ import Map from '../map'
 import MapObscure from '../map/obscure'
 import MapOverlay from '../map/overlay'
 import Player from '../player'
-import Store from '../store'
+import Shop from '../shop'
 import store from '../../config/store'
 
 import '../../config/tiles.css'
@@ -21,7 +21,7 @@ function World(props) {
     const [currentRoom, setCurrentRoom] = useState([])
 
     const fetchCurrentRoom = async () => {
-        await axios.get(BE_URL + 'api/adv/init/', {
+        return await axios.get(BE_URL + 'api/adv/init/', {
             headers: {
                 Authorization: 'Token ' + token
             }
@@ -177,7 +177,7 @@ function World(props) {
                 <MapOverlay overlay={room.overlay} />
                 <MapObscure obscure={room.obscure} />
                 <Player />
-                <Store />
+                <Shop />
             </>
         )
     }

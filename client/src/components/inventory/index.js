@@ -41,7 +41,6 @@ function Inventory(props) {
     }
 
     const handleItemClick = async (itemName) => {
-        console.log(itemName)
         await axios({
             method: 'post',
             url: BE_URL + 'api/adv/drop/',

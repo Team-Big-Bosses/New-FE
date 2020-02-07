@@ -44,6 +44,13 @@ export default function handleInteraction(direction) {
                 })
             }
 
+            if (target === 'flask') {
+                store.dispatch({
+                    type: 'SHOW_SHOP',
+                    payload: true
+                })
+            }
+
             return store.dispatch({
                 type: 'SET_CONTEXT',
                 payload: {
