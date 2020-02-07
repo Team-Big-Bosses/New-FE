@@ -4,7 +4,7 @@ import Pusher from "pusher-js";
 import ChatList from "./chatlist";
 import ChatBox from "./chatbox";
 import { BE_URL, token } from "../../config/constants";
-import "./pusher.css";
+import "../../scss/Pusher.scss";
 
 export class Chat extends Component {
   constructor(props) {
@@ -49,17 +49,12 @@ export class Chat extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React-Pusher Chat</h1>
-        </header>
-        <section>
           <ChatList chats={this.state.chats} />
           <ChatBox
             text={this.state.text}
             username={this.state.username}
             handleTextChange={this.handleTextChange}
           />
-        </section>
       </div>
     );
   }

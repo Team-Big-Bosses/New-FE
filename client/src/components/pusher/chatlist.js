@@ -1,5 +1,5 @@
 import React from "react";
-import "./chatlist.css";
+import "../../scss/Chatlist.scss";
 // import avatar from "./avatar.png";
 
 export default ({ chats }) => (
