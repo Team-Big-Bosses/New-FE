@@ -198,30 +198,32 @@ function World(props) {
 
   return (
     <div>
-      <Chat />
-      <div
-        style={{
-          display: "flex",
-          height: "90vh",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "rgb(41, 38, 52)"
-        }}
-      >
+      <div style={{ display: "flex", flexDirection: "row", marginTop: "4rem" }}>
         <div
           style={{
-            position: "relative",
-            width: "320px",
-            height: "240px",
-            transform: "scale(2) translateZ(0)"
+            display: "flex",
+            height: "90vh",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "rgb(41, 38, 52)"
           }}
         >
-          {/* Add loading animation to room render if necessary (it probably will be) */}
-          {currentRoom.length
-            ? renderRoom(determineRoomRender(currentRoom))
-            : null}
+          <div
+            style={{
+              position: "relative",
+              width: "320px",
+              height: "240px",
+              transform: "scale(2) translateZ(0)"
+            }}
+          >
+            {/* Add loading animation to room render if necessary (it probably will be) */}
+            {currentRoom.length
+              ? renderRoom(determineRoomRender(currentRoom))
+              : null}
+          </div>
         </div>
+        <Chat />
       </div>
     </div>
   );
