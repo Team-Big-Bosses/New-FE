@@ -15,11 +15,12 @@ export class Chat extends Component {
       chats: []
     };
   }
+
   componentDidMount() {
     const username = window.prompt("Username: ", "Anonymous");
     this.setState({ username });
-    const pusher = new Pusher("APP_KEY", {
-      cluster: "APP_CLUSTER",
+    const pusher = new Pusher("APP_ID", {
+      cluster: "us2",
       encrypted: true
     });
     const channel = pusher.subscribe("chat");
@@ -38,7 +39,7 @@ export class Chat extends Component {
       axios({
         method: "post",
         url: BE_URL + "api/adv/say/",
-        headers: { ContentType: "application/json" },
+        headers: { Authorization: "Token " + token },
         data: { payload }
       });
     } else {
