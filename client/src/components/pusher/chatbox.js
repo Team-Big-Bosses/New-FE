@@ -1,5 +1,5 @@
 import React from "react";
-import "./chatbox.css";
+import "../../scss/Chatbox.scss";
 
 export default ({ text, username, handleTextChange }) => (
   <div>
