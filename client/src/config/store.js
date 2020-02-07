@@ -2,11 +2,13 @@ import { createStore, combineReducers } from 'redux'
 import playerReducer from '../components/player/reducer'
 import mapReducer from '../components/map/reducer'
 import dialogueReducer from '../components/dialogue/reducer'
+import itemsReducer from '../components/items/reducer'
 
 const rootReducer = combineReducers({
     player: playerReducer,
     map: mapReducer,
-    dialogue: dialogueReducer
+    dialogue: dialogueReducer,
+    items: itemsReducer
 })
 
 const store = createStore(

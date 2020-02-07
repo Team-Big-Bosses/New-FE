@@ -6,7 +6,7 @@ function DialogueBox(props) {
 
     const generateDialogue = (context) => {
         if (context === 'Flask') {
-            return renderDialogue('Be seeing you.', context)
+            return renderDialogue('Flask has wares, if you have coin.', context)
         }
 
         if (context === 'mushroom' || context === 'stump' || context === 'rock') {
@@ -28,7 +28,7 @@ function DialogueBox(props) {
                         zIndex: '1001',
                         height: '48px',
                         width: '100%',
-                        top: '75%',
+                        top: '70%',
                         color: 'white',
                         fontSize: '0.5rem'
                     }}
@@ -36,7 +36,7 @@ function DialogueBox(props) {
                     <div 
                         className="dialogue-box"
                         style={{
-                            backgroundImage: 'linear-gradient(to bottom, rgb(0, 0, 0, 0.99), rgb(0, 0, 0, 0.8)',
+                            backgroundImage: 'linear-gradient(to bottom, rgb(0, 0, 0, 0.99), rgb(0, 0, 0, 0.9)',
                             border: '1px solid #f5f2d0',
                             height: '100%',
                             width: '85%',

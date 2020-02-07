@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import DialogueBox from '../dialogue'
+import Items from '../items'
 import Loading from '../loading'
 import Map from '../map'
 import MapObscure from '../map/obscure'
 import MapOverlay from '../map/overlay'
 import Player from '../player'
+import Store from '../store'
 import store from '../../config/store'
 
 import '../../config/tiles.css'
@@ -23,6 +25,12 @@ function World(props) {
             }
         }).then(res => {
             setCurrentRoom(res.data.exits)
+            store.dispatch({
+                type: 'SET_ITEMS',
+                payload: {
+                    items: res.data.items
+                }
+            })
         })
     }
 
@@ -160,11 +168,13 @@ function World(props) {
         return (
             <>
                 <DialogueBox />
+                <Items />
                 <Loading />
                 <Map tiles={room.tiles} />
                 <MapOverlay overlay={room.overlay} />
                 <MapObscure obscure={room.obscure} />
                 <Player />
+                <Store />
             </>
         )
     }

@@ -43,6 +43,8 @@ function Player(props) {
 
         if (code.indexOf('Arrow') === -1) return
 
+        const dialogueIsOpen = store.getState().dialogue.show
+
         const moveCode = code.replace('Arrow', '').toUpperCase()
 
         if (props.facing === moveCode) {
@@ -50,7 +52,7 @@ function Player(props) {
         }
 
         // If 180ms have not passed (approximately animation speed) skip handling movement
-        if (timestamp + 180 < Date.now()) {
+        if (timestamp + 180 < Date.now() && !dialogueIsOpen) {
             handleMovement(moveCode)
             setTimestamp(Date.now())
 
