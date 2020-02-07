@@ -1,13 +1,6 @@
 import React from "react";
-import store from "../../config/store";
 
 function MapButton() {
-  function handleClick() {
-    store.dispatch({
-      type: "SHOW_INVENTORY",
-      payload: true
-    });
-  }
 
   return (
     <div
@@ -18,6 +11,7 @@ function MapButton() {
     >
       <a
         href="https://team-big-bosses-be.herokuapp.com/api/adv/rooms"
+        target="_blank"
         style={{ textDecoration: "none", color: "white" }}
       >
         <div
@@ -28,7 +22,6 @@ function MapButton() {
             padding: "0.25rem",
             width: "fit-content"
           }}
-          onClick={() => handleClick()}
         >
           MAP
         </div>
