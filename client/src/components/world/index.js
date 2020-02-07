@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import axios from "axios";
-import DialogueBox from "../dialogue";
-import Loading from "../loading";
-import Map from "../map";
-import MapObscure from "../map/obscure";
-import MapOverlay from "../map/overlay";
-import Player from "../player";
-import store from "../../config/store";
-import Chat from "../pusher/Pusher";
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
+import axios from 'axios'
+import DialogueBox from '../dialogue'
+import Chat from '../pusher/Pusher'
+import Inventory from '../inventory'
+import InventoryButton from '../inventory/button'
+import Items from '../items'
+import Loading from '../loading'
+import Map from '../map'
+import MapObscure from '../map/obscure'
+import MapOverlay from '../map/overlay'
+import Player from '../player'
+import Shop from '../shop'
+import store from '../../config/store'
 
 import "../../config/tiles.css";
 import { BE_URL, token } from "../../config/constants";
@@ -34,17 +37,21 @@ import {
 function World(props) {
   const [currentRoom, setCurrentRoom] = useState([]);
 
-  const fetchCurrentRoom = async () => {
-    await axios
-      .get(BE_URL + "api/adv/init/", {
-        headers: {
-          Authorization: "Token " + token
-        }
-      })
-      .then(res => {
-        setCurrentRoom(res.data.exits);
-      });
-  };
+    const fetchCurrentRoom = async () => {
+        return await axios.get(BE_URL + 'api/adv/init/', {
+            headers: {
+                Authorization: 'Token ' + token
+            }
+        }).then(res => {
+            setCurrentRoom(res.data.exits)
+            store.dispatch({
+                type: 'SET_ITEMS',
+                payload: {
+                    items: res.data.items
+                }
+            })
+        })
+    }
 
   const determineRoomRender = exits => {
     const sortedExits = exits
@@ -179,26 +186,30 @@ function World(props) {
     }
   };
 
-  const renderRoom = room => {
-    return (
-      <>
-        <DialogueBox />
-        <Loading />
-        <Map tiles={room.tiles} />
-        <MapOverlay overlay={room.overlay} />
-        <MapObscure obscure={room.obscure} />
-        <Player />
-      </>
-    );
-  };
+    const renderRoom = (room) => {
+        return (
+            <>
+                <DialogueBox />
+                <Inventory />
+                <Items />
+                <Loading />
+                <Map tiles={room.tiles} />
+                <MapOverlay overlay={room.overlay} />
+                <MapObscure obscure={room.obscure} />
+                <Player />
+                <Shop />
+            </>
+        )
+    }
 
   useEffect(() => {
     fetchCurrentRoom();
   }, [props.currentRoom]);
 
   return (
+
     <div name="game-room">
-      <div style={{ display: "flex", flexDirection: "row", marginTop: "4rem" }}>
+      <div style={{ display: "flex", flexDirection: "row" }}>
         <div
           style={{
             display: "flex",
@@ -209,21 +220,40 @@ function World(props) {
             backgroundColor: "rgb(41, 38, 52)"
           }}
         >
+
           <div
             style={{
-              position: "relative",
-              width: "320px",
-              height: "240px",
-              transform: "scale(2) translateZ(0)"
+              display: "flex",
+              height: "100vh",
+              width: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "rgb(41, 38, 52)"
             }}
           >
-            {/* Add loading animation to room render if necessary (it probably will be) */}
-            {currentRoom.length
-              ? renderRoom(determineRoomRender(currentRoom))
-              : null}
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    zoom: '2'
+                }}
+            >
+              <div
+                  style={{
+                      position: 'relative',
+                      width: '320px',
+                      height: '240px'
+                  }}
+                >
+                  {/* Add loading animation to room render if necessary (it probably will be) */}
+                  {currentRoom.length ? renderRoom(determineRoomRender(currentRoom)) : null}
+              </div>
+              <InventoryButton />
+            </div>
           </div>
+          <Chat />
         </div>
-        <Chat />
       </div>
     </div>
   );

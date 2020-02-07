@@ -5,6 +5,7 @@ import handleMovement from './movement'
 import useEventListener from '@use-it/event-listener'
 import { SPRITE_SIZE } from '../../config/constants'
 import store from '../../config/store'
+import handleInteraction from './interaction'
 
 const STEP_LOOP = [1, 0, 1]
 const STEP_LOOP2 = [1, 2, 1]
@@ -36,7 +37,13 @@ function Player(props) {
             return
         }
 
+        if (code === 'Enter') {
+            handleInteraction(props.facing)
+        }
+
         if (code.indexOf('Arrow') === -1) return
+
+        const dialogueIsOpen = store.getState().dialogue.show
 
         const moveCode = code.replace('Arrow', '').toUpperCase()
 
@@ -45,7 +52,7 @@ function Player(props) {
         }
 
         // If 180ms have not passed (approximately animation speed) skip handling movement
-        if (timestamp + 180 < Date.now()) {
+        if (timestamp + 180 < Date.now() && !dialogueIsOpen) {
             handleMovement(moveCode)
             setTimestamp(Date.now())
 
