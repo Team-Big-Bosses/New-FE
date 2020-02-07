@@ -27,7 +27,7 @@ const Login = props => {
         props.history.push("/world");
       })
       .catch(err => {
-        console.log(err);
+        console.log(err.response);
         setCredentials({
           username: "",
           password: ""

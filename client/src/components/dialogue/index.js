@@ -22,7 +22,7 @@ function DialogueBox() {
                     width: '100%',
                     top: '75%',
                     color: 'white',
-                    fontSize: '0.4rem'
+                    fontSize: '0.5rem'
                 }}
             >
                 <div 

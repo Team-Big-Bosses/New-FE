@@ -1,10 +1,13 @@
 .landing-container{
-
+    display: flex;
+    flex-direction: column;
 
   .header{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: -1.2rem;
+
 
     h1{
       padding: 1rem;
@@ -13,14 +16,14 @@
     }
   
     .landing-nav{
-      padding: 1rem;
+    //   padding: 1rem;
   
       .link{
         color: #489551;
         text-decoration: none;
         font-weight: bold;
         font-size: 1.5rem;
-        padding: 1rem;
+        padding: 0 1rem;
       }
     }
   }
@@ -30,6 +33,7 @@
   width: 100%;
   padding: 20vh 0;
   display: flex;
+  margin-top: 5%;
 
   .grass-strip{
     display: flex;
@@ -38,7 +42,7 @@
   }
 
   .empty{
-    background-color: black;
+    background-color: rgb(41, 38, 52);
     height: 16px;
     width: 16px;
   }
