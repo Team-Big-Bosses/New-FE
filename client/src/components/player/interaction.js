@@ -37,7 +37,7 @@ export default function handleInteraction(direction) {
             const nextTile = currentRoom.overlay[y][x]
             const target = nextTile.slice(0, nextTile.indexOf('-'))
 
-            if (target === 'mushroom' || target === 'stump' || target === 'tree') {
+            if (target === 'mushroom' || target === 'stump' || target === 'tree' || target === 'treasure') {
                 store.dispatch({
                     type: 'SHOW_ITEMS',
                     payload: true
@@ -54,14 +54,13 @@ export default function handleInteraction(direction) {
         }
 
         if (typeof currentRoom.overlay[y][x] ==='string') {
-            // If the target is one of the interactable objects, handle logic for taking items
-
-            // If target is shopkeeper, handle logic for store
+            
+         // If target is shopkeeper, handle logic for store
 
             const nextTile = currentRoom.overlay[y][x]
             const target = nextTile.slice(0, nextTile.indexOf('-'))
 
-            if (target === 'mushroom' || target === 'stump' || target === 'tree') {
+            if (target === 'mushroom' || target === 'stump' || target === 'tree' || target === 'treasure') {
                 store.dispatch({
                     type: 'SET_CONTEXT',
                     payload: {
