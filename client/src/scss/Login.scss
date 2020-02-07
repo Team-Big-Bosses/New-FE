@@ -7,6 +7,7 @@
   h1{
     text-align: center;
     color: #489551;
+    font-size: 1.5rem;
   }
 
   form{
@@ -19,7 +20,9 @@
     input{
       padding: 3%;
       margin: 5%;
-      font-size: 1.5rem;
+      font-size: 1rem;
+      font-family: 'eightBitFont';
+
     }
 
     button{
@@ -31,6 +34,7 @@
       color: white;
       border: none;
       box-shadow: none;
+      font-family: 'eightBitFont';
 
       &:hover{
         background-color: white;
