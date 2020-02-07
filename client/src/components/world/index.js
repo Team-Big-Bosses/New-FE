@@ -177,8 +177,8 @@ function World(props) {
         <div
             style={{
                 display: 'flex',
-                height: '100vh',
-                width: '100vw',
+                height: '90vh',
+                width: '100%',
                 justifyContent: 'center',
                 alignItems: 'center',
                 backgroundColor: 'rgb(41, 38, 52)'
