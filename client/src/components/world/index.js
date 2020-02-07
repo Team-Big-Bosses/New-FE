@@ -197,7 +197,7 @@ function World(props) {
   }, [props.currentRoom]);
 
   return (
-    <div>
+    <div name="game-room">
       <div style={{ display: "flex", flexDirection: "row", marginTop: "4rem" }}>
         <div
           style={{
