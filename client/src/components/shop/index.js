@@ -8,22 +8,27 @@ import { BE_URL, token } from '../../config/constants'
 function Shop(props) {
 
     const reduceItemDuplicates = (items) => {
+        var prices = {};
         var counts = {};
         var final = [];
 
         for (var i = 0; i < items.length; i++) {
-            if(counts[items[i]] != undefined) {
-                counts[items[i]] = 1;
+            if(counts[items[i].name] != undefined) {
+                counts[items[i].name] = 1;
             } else {
-                counts[items[i]]++;
+                counts[items[i].name]++;
             }
         }
 
-        for (const name in counts) {
-            final.push({ 'name': name, 'count': counts[name] + 1 });
+        for (var i = 0; i < items.length; i++) {
+            prices[items[i].name] = items[i].price 
         }
 
-        return final
+        for (const name in counts) {
+            final.push({ name: name, count: counts[name] + 1, price: prices[name] });
+        }
+
+        return final;
     }
 
     const handleMenuClick = async (action) => {
@@ -148,12 +153,12 @@ function Shop(props) {
                 })
             case 'SELL':
                 const inventory = props.inventory.inventory
-                const names = []
+                const namePrice = []
                 inventory.map(item => {
-                    names.push(item.name)
+                    namePrice.push({ name: item.name, price: item.price })
                 })
 
-                const noDuplicates = reduceItemDuplicates(names)
+                const noDuplicates = reduceItemDuplicates(namePrice)
 
                 return noDuplicates.map(item => {
                     return (
@@ -161,7 +166,7 @@ function Shop(props) {
                             style={{ margin: '0.5rem 0', cursor: 'pointer' }}
                             onClick={() => handleSellClick(item.name)}
                         >
-                            {item.count ? `${item.name}` + ' x' + `${item.count}` : item.name}
+                            {item.count ? `${item.price}G - ` + `${item.name}` + ' x' + `${item.count}` : `${item.price}G - ` + `${item.name}`}
                         </div>
                     )
                 })
