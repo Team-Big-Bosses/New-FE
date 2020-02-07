@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import DialogueBox from '../dialogue'
+import Inventory from '../inventory'
+import InventoryButton from '../inventory/button'
 import Items from '../items'
 import Loading from '../loading'
 import Map from '../map'
@@ -168,6 +170,7 @@ function World(props) {
         return (
             <>
                 <DialogueBox />
+                <Inventory />
                 <Items />
                 <Loading />
                 <Map tiles={room.tiles} />
@@ -196,14 +199,23 @@ function World(props) {
         >
             <div
                 style={{
-                    position: 'relative',
-                    width: '320px',
-                    height: '240px',
-                    transform: 'scale(2) translateZ(0)'
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    zoom: '2'
                 }}
-             >
-                {/* Add loading animation to room render if necessary (it probably will be) */}
-                {currentRoom.length ? renderRoom(determineRoomRender(currentRoom)) : null}
+            >
+                <div
+                    style={{
+                        position: 'relative',
+                        width: '320px',
+                        height: '240px'
+                    }}
+                 >
+                    {/* Add loading animation to room render if necessary (it probably will be) */}
+                    {currentRoom.length ? renderRoom(determineRoomRender(currentRoom)) : null}
+                </div>
+                <InventoryButton />
             </div>
         </div>
     )

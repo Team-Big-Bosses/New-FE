@@ -26,9 +26,8 @@ function DialogueBox(props) {
                     style={{
                         position: 'absolute',
                         zIndex: '1001',
-                        height: '48px',
                         width: '100%',
-                        top: '70%',
+                        bottom: '5%',
                         color: 'white',
                         fontSize: '0.5rem'
                     }}
@@ -38,8 +37,7 @@ function DialogueBox(props) {
                         style={{
                             backgroundImage: 'linear-gradient(to bottom, rgb(0, 0, 0, 0.99), rgb(0, 0, 0, 0.9)',
                             border: '1px solid #f5f2d0',
-                            height: '100%',
-                            width: '85%',
+                            width: '80%',
                             margin: '0 auto',
                             padding: '0.5rem'
                         }}
